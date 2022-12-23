@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul th:object="${student}">
+		<li>Tên :[[*{name}]]</li>
+		<li>Email : [[*{email}]]</li>
+		<li>Quốc gia : [[*{country}]]</li>
+		<li>Giới tính : [[*{gender?'Nam':'Nữ'}]]</li>
+	</ul>
+</body>
+</html>

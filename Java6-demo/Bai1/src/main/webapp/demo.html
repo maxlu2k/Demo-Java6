@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo JSON</title>
+</head>
+<body>
+    <script>
+        let sv  = {
+            "name":"TÈO",
+            "age":20,
+            "gender":true,
+            "contact":{
+                "email":"teonv@gmai.com",
+                "phone":"0123456789"
+            },
+            "subject":["Java","PHP","Javascript"]
+        };
+        console.log(sv);
+        for (const key in sv) {
+            console.log(key,sv[key]);
+        }
+        let text = JSON.stringify(sv);
+        console.log(text)
+        let obj = JSON.parse(text);
+        console.log(obj)
+    </script>
+</body>
+</html>

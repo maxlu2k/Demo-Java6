@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form  th:object="${student}" method="post">
+		<input type="text" th:field="*{name}" placeholder="name" />
+		<br />
+		<input type="text"  th:field="*{age}" placeholder="age" />
+		<br />
+		<input type="text"  th:field="*{weight}" placeholder="weight" />
+		<br />
+		<input type="radio" th:value="true"  th:field="*{gender}"/> Nam
+		<br />
+		<input type="radio" th:value="false"  th:field="*{gender}"/> Nữ
+		<br />
+		<button th:formaction="@{/student/save}" formaction="post">Create</button>
+		
+		<button th:formaction="@{|/student/update/${key}|}" formaction="post">Update</button>
+		
+		<button th:formaction="@{|/student/delete/${key}|}" formaction="get">Delete</button>
+		
+		<button th:formaction="@{/student/index}">Reset</button>
+	</form>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				
+				<th>Age</th>
+				
+				<th>Weight</th>
+				
+				<th>gender</th>
+		
+				<th>Thao tác</th>
+		
+			</tr>
+		</thead>
+		<tbody>
+			<th:block>
+				<tr th:each="item : ${items}">
+					<td>[[${item.value.name}]]</td>
+					<td>[[${item.value.age}]]</td>
+					<td>[[${item.value.weight}]]</td>
+					<td>[[${item.value.gender?'Nam':'Nữ'}]]</td>
+					<td>
+						<a th:href="@{|/student/edit/${item.key}|}">Edit</a>
+						<a th:href="@{|/student/delete/${item.key}|}">Del</a>
+					</td>
+				</tr>
+			</th:block>
+		</tbody>
+	</table>
+</body>
+</html>

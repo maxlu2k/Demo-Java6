@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:fragment="nav">
+    <a th:href="@{/home/index}">home</a>
+    <a th:href="@{/home/page}">page</a>
+    <a th:href="@{/home/about}">About</a>
+    <a th:href="@{/home/logout}">logout</a>
+    <a th:href="@{/home/login}">login</a>
+    <a th:href="@{/home/user}">User</a>
+    <a th:href="@{/home/admin}">Admin</a>
+    <a th:href="@{/home/authenticated}">authenticated</a>
+    <a th:href="@{/home/data/user}">Data User</a>
+    <a th:href="@{/home/data/admin}">Data Admin</a>
+    <a th:href="@{/home/data}">Data</a>
+    <p>[[${mes}]]</p>
+    <th:block th:unless="${#request.remoteUser}">
+    	<h3>CHưa đăng nhập</h3>
+    </th:block>
+    <th:block th:if="${#request.remoteUser}">
+    	<p>username: [[${#request.remoteUser}]]</p>
+    	<p>admin: [[${#request.isUserInRole('ADMIN')}]]</p>
+    	<ul th:object="${#request.userPrincipal}">
+    		<li>[[*{name}]]</li>
+    		<li>[[*{authorities}]]</li>
+    	</ul>
+    </th:block>
+    </div>
+</body>
+</html>

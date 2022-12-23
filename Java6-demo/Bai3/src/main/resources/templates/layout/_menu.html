@@ -1,0 +1,9 @@
+<div xmlns="https://www.thymeleaf.org">
+    <ul th:fragment="navbar">
+        <li><a th:href="@{/home}" th:text="#{page.home}"></a></li>
+        <li><a th:href="@{/about}" th:text="#{page.about}"></a></li>
+        <li><a th:href="@{/form}" th:text="#{page.student}"></a></li>
+        <li><a href="?lang=vn">Tiếng Việt</a></li>
+        <li><a href="?lang=en">English</a></li>
+    </ul>
+</div>

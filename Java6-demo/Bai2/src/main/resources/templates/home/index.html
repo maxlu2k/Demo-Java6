@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<img th:src="@{/images/dell.png}" style="height: 100px" alt="no image" />
+	<nav th:replace="~{/layout/menu.html}"></nav>
+	<h3>[[${hello}]]</h3>
+	<ul th:object="${student}">
+		<li th:text="${student.name}"></li>
+		<li th:text="*{age}"></li>
+		<li th:text="*{gender?'Nam':'Nữ'}"></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="controller">
+	<form action="" enctype="multipart-formdata">
+		<input type="file" onchange="angular.element(this).scope().import(this.files)">
+		<input type="submit" value="submit">
+	</form>
+	<button onclick="check()"> check </button>
+	<script src="../static/js/excel.js"></script>
+</body>
+</html>

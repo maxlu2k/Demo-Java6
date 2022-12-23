@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- <meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/> -->
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:insert="~{/index.html :: nav}"></div>
+    <form th:action="@{/security/login}" method="post">
+        username <input type="text" name="username" >
+        <br>
+        password <input type="password" name="password" >
+        <!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> -->
+        <br>
+        <input type="checkbox" name="remember" > remember me ? 
+        <br />
+        <button>Login</button>
+    </form>
+</body>
+</html>

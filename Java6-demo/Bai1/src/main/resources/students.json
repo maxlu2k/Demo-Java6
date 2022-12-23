@@ -1,0 +1,42 @@
+[
+	{
+		"name": "TÈO",
+		"age": 20,
+		"gender": true,
+		"contact": {
+			"email": "teonv@gmai.com",
+			"phone": "0123456789"
+		},
+		"subject": [
+			"Java",
+			"PHP",
+			"Javascript"
+		]
+	},
+	{
+		"name": "Nở",
+		"age": 21,
+		"gender": false,
+		"contact": {
+			"email": "nopt@gmai.com",
+			"phone": "0123456789"
+		},
+		"subject": [
+			"Java",
+			"Javascript"
+		]
+	},
+	{
+		"name": "Chí",
+		"age": 22,
+		"gender": true,
+		"contact": {
+			"email": "chinv@gmai.com",
+			"phone": "0123456789"
+		},
+		"subject": [
+			"Java",
+			"PHP"
+		]
+	}
+]

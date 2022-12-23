@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>Today : [[${#dates.format(now,'EEEEE,dd-MM-yyyy')}]]</p>
+	<p>SỐ lượng sinh viên : [[${#lists.size(list)}]]</p>
+	<p>SỐ lượng sinh viên : [[${#arrays.length(list)}]]</p>
+	<p>SỐ lượng sinh viên : [[${list.size}]]</p>
+	<ul th:each="item,state:${list}" >
+		<li th:text="${item.name}"></li>
+		<!-- <li>[[*{name}]]</li> -->
+		
+		<li>[[${#strings.capitalizeWords(item.name)}]]</li>
+		<li th:text="*{#strings.capitalizeWords(item.name)}"></li>
+		<li th:text="*{#numbers.formatDecimal(pi,2,'POINT',3,'COMMA')}"></li>
+		<li>[[${#numbers.formatDecimal(pi,2,'COMMA',3,'POINT')}]]</li>
+		<!-- (giá trị ,Số trước thập phân,'phân cách (COMMA : PHẢY)',Số sau thập phân,'phân cách (POINT : chấm)') -->
+		<li>[[${item.age}]]</li>
+		<li>[[${item.gender?'Nam':'Nữ'}]]</li>
+	</ul>
+</body>
+</html>

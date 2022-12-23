@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<img th:src="@{/images/dell.png}" style="height: 100px" alt="no image" />
+	<nav th:replace="~{/layout/menu.html}"></nav>
+	<h3>[[${hello}]]</h3>
+	<ul th:object="${student}">
+		<li th:text="${student.name}"></li>
+		<li th:text="*{age}"></li>
+		<li th:text="*{gender?'Nam':'Nữ'}"></li>
+	</ul>
+	<ul>
+		<p>Đường dẫn tương đối root</p>
+		<li><a th:href="@{/home}" th:text="#{menu.home}"></a></li>
+		<p>Đường dẫn tương đối URL hiện tại</p>
+		<li><a th:href="@{./page?p=1}" th:text="#{menu.page1}"></a></li>
+		<!-- Lùi 1  -->
+		<li><a th:href="@{../page?p=2}" th:text="#{menu.page2}"></a></li>
+		<!-- Lùi 2 -->
+		<li><a th:href="@{page}">Link</a></li>
+		<!-- Tiếp tục  -->
+		<li><a th:href="@{//https://www.google.com/}"
+			th:text="#{menu.page2}">Đường đẫn tuyệt đối</a></li>
+	</ul>
+	<th:block th:with="x=11,y=1">
+		<a th:href="@{/order(a=${x},b=${y})}">Loại 1</a>
+		<a th:href="@{|/order?a=${x}&b=${y}|}">Loại 2</a>
+		<a th:href="@{'/order?a='+${x}+'&b='+${y}}">Loại 3</a>
+	</th:block>
+	<br />
+	<th:block th:with="x=11,y=1">
+		<a th:href="@{/{a}/{b}/order(a=${x},b=${y})}">Loại 1</a>
+		<a th:href="@{|/${x}/order?a=${x}&b=${y}|}">Loại 2</a>
+		<a th:href="@{'/order/'+${x}+'/'+${y}}">Loại 3</a>
+	</th:block>
+</body>
+</html>
