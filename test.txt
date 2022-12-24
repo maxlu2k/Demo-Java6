@@ -1,0 +1,15 @@
+git config
+git init
+git clone
+git status
+git add
+git commit
+git push/pull
+git branch
+git checkout
+git stash
+git merge
+git reset
+git remote
+git add
+git cheet sheets
